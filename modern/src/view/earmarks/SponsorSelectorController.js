@@ -2,6 +2,10 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.sponsorselector',
 
+	requires: [
+		'SpendingPortal.view.earmarks.Earmarks'
+	],
+
 	onStateSelect: function(tagField, newValue) {
 		
 		var store = this.getViewModel().getStore('Sponsors')	
@@ -20,6 +24,14 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 					return false;
 			});
 		}
+	},
+
+	onSponsorDisclosure: function(list,record,target,index,e) {
+		this.getViewModel().set('selectedSponsorIds',record.get('IDSPONSOR'));
+		this.getView().push({
+			xtype: 'earmarks',
+			title: record.get('FIRSTNAME') + ' ' + record.get('LASTNAME')
+		});
 	}
 
 	/*

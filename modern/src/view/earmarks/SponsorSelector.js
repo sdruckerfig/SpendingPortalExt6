@@ -8,7 +8,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
     ],
 
     controller: 'sponsorselector',
-    
+
     items: [{
         title: 'Select a Rep.',
         xtype: 'list',
@@ -20,6 +20,9 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
             '{HONORIFIC} {FIRSTNAME} {LASTNAME}<br />',
             '{STATE}'
         ],
+        listeners: {
+            disclose : 'onSponsorDisclosure'
+        },
         items: [{
             xtype: 'toolbar',
             docked: 'top',

@@ -8,12 +8,13 @@ Ext.define('SpendingPortal.view.main.Main', {
         'SpendingPortal.view.main.MainModel',
         'SpendingPortal.view.main.MainController',
         'Ext.NavigationView',
-        'SpendingPortal.view.earmarks.SponsorSelector'
+        'SpendingPortal.view.earmarks.SponsorSelector',
+        'SpendingPortal.view.feedback.Feedback'
     ],
 
     viewModel: 'main',
     controller: 'main',
-    
+
     defaults: {
         tab: {
             iconAlign: 'top'
@@ -25,12 +26,19 @@ Ext.define('SpendingPortal.view.main.Main', {
     items: [
         {
             xtype: 'sponsorselector',
+            reference: 'sponsorselector',
             title: 'Earmarks',
             iconCls: 'x-fa fa-home'
         },{
             title: 'Compare',
             iconCls: 'x-fa fa-user',
+        },
+        {
+            title: 'Feedback',
+            xtype: 'feedback',
+            iconCls: 'x-fa fa-file-o'
         }
+        
         
     ]
 });
