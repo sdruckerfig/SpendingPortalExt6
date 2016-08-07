@@ -42,14 +42,12 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 
 	onBack: function(nav,eOpts) {
 		this.redirectTo('');
-	}
+	},
 
-	/*
-	,
-
-	onSponsorSelect: function(grid, aSelections) {
-		this.getViewModel().set('selectedSponsorIds', Ext.Array.pluck(aSelections,"id").join(','));
+	onClear: function(b,e) {
+		this.lookupReference('sponsorlist').deselectAll();
+		this.lookupReference('stateselector').setValue('ALL');
+		this.getViewModel().set('selectedSponsorIds','0');
 	}
-	*/
 
 });

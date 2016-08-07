@@ -17,6 +17,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
     items: [{
         title: 'Select a Rep.',
         xtype: 'list',
+        reference: 'sponsorlist',
         onItemDisclosure: true,
         bind: {
             store: '{Sponsors}'
@@ -35,6 +36,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
             docked: 'top',
             items: [{
                 xtype: 'selectfield',
+                reference: 'stateselector',
                 autoSelect: true,
                 displayField: 'label',
                 valueField: 'abbr',
@@ -47,7 +49,8 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
                 }
             }, {
                 xtype: 'button',
-                text: 'Clear'
+                text: 'Clear',
+                handler: 'onClear'
             }]
         }]
     }]

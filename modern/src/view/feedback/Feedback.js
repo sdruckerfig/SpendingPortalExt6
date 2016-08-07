@@ -60,8 +60,14 @@ Ext.define('SpendingPortal.view.feedback.Feedback', {
                 iconCls: 'x-fa fa-save',
                 align: 'right',
                 handler: function(button, event) {
-                    var form = button.up('form');
-
+                    var form = button.up('formpanel');
+                    var values = form.getValues();
+                    for (var i in values) {
+                        if (Ext.isEmpty(values[i])) {
+                            Ext.Msg.alert("Error","All Fields Must Be Filled In");
+                            return;
+                        }
+                    }
                     form.submit({
                         url: 'http://webapps.figleaf.com/arch101/dataservices/desktop/feedback.cfc?method=submitfeedback',
                         success: function() {
@@ -69,8 +75,7 @@ Ext.define('SpendingPortal.view.feedback.Feedback', {
                         },
                         failure: function() {
                             Ext.Msg.alert("Feedback failed", "An error occurred while processing the request.");
-                        },
-                        scope: this
+                        }
                     });
                 }
 
