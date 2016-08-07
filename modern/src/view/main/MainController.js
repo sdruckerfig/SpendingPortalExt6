@@ -31,12 +31,13 @@ Ext.define('SpendingPortal.view.main.MainController', {
    
   onShowEarmark : function(id) {
     var nv = this.lookupReference('sponsorselector');
-    if (this.getEarmarkDetailView()) {
+    if (nv.down('earmark')) {
       nv.pop();
     }
     nv.push({
       xtype: 'earmark',
-      earmarkid : id
+      earmarkId : id,
+      title: 'Earmark'
     });
   }
 });
