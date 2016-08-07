@@ -32,6 +32,16 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 			xtype: 'earmarks',
 			title: record.get('FIRSTNAME') + ' ' + record.get('LASTNAME')
 		});
+	}, 
+
+	onSelectionChange: function(list,models) {
+		var selections = list.getSelections();
+		var aIds= Ext.Array.pluck(selections,"id");
+		this.getViewModel().set('selectedSponsorIds',aIds.join(','));
+	},
+
+	onBack: function(nav,eOpts) {
+		this.redirectTo('');
 	}
 
 	/*

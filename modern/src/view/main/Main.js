@@ -9,7 +9,8 @@ Ext.define('SpendingPortal.view.main.Main', {
         'SpendingPortal.view.main.MainController',
         'Ext.NavigationView',
         'SpendingPortal.view.earmarks.SponsorSelector',
-        'SpendingPortal.view.feedback.Feedback'
+        'SpendingPortal.view.feedback.Feedback',
+        'SpendingPortal.view.sponsorchart.SponsorChart'
     ],
 
     viewModel: 'main',
@@ -31,7 +32,19 @@ Ext.define('SpendingPortal.view.main.Main', {
             iconCls: 'x-fa fa-home'
         },{
             title: 'Compare',
+            layout: 'fit',
+            items: [
+                {
+                  xtype: 'sponsorchart'
+                },
+                {
+                  xtype: 'titlebar',
+                  title: 'Compare',
+                  docked: 'top'
+                }
+            ],
             iconCls: 'x-fa fa-user',
+           
         },
         {
             title: 'Feedback',

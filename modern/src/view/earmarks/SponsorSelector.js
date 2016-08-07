@@ -4,10 +4,15 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
     requires: [
         'Ext.List',
         'Ext.Toolbar',
-        'SpendingPortal.view.earmarks.SponsorSelectorController'
+        'SpendingPortal.view.earmarks.SponsorSelectorController',
+        'Ext.Button'
     ],
 
     controller: 'sponsorselector',
+
+    listeners: {
+        back: 'onBack'
+    },
 
     items: [{
         title: 'Select a Rep.',
@@ -16,12 +21,14 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
         bind: {
             store: '{Sponsors}'
         },
+        mode: 'multi',
         itemTpl: [
             '{HONORIFIC} {FIRSTNAME} {LASTNAME}<br />',
             '{STATE}'
         ],
         listeners: {
-            disclose : 'onSponsorDisclosure'
+            disclose : 'onSponsorDisclosure',
+            selectionchange: 'onSelectionChange'
         },
         items: [{
             xtype: 'toolbar',
@@ -38,6 +45,9 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
                 listeners: {
                    change: 'onStateSelect'
                 }
+            }, {
+                xtype: 'button',
+                text: 'Clear'
             }]
         }]
     }]

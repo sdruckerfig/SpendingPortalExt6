@@ -36,6 +36,6 @@ Ext.define('SpendingPortal.view.earmarks.Earmark', {
 		'<div class="earmarkfield">',
 			'<label>Excerpt:</label>',
 	        '{SC_F_CTTN_EXCERPT}',
-        '</div>',
+        '</div>'
 	]
 });

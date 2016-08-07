@@ -45,12 +45,15 @@ Ext.define('SpendingPortal.view.sponsorchart.SponsorChart', {
     }],
     series: [{
         type: 'bar3d',
-        colors: ['#0052A5'],
         label: {
-            display: 'outside',
+            display: 'inside',
             field: 'value',
             color: '#333',
-            'text-anchor': 'middle'
+            'text-anchor': 'middle',
+            renderer: function(text,sprite,config,renderData,index) {
+                var rec = renderData.store.getAt(index);
+                return rec.get('label') + " - " + Ext.util.Format.usMoney(rec.get('value')).split('.')[0] + 'K';
+            }
         },
         xField: 'label',
         yField: 'value'
