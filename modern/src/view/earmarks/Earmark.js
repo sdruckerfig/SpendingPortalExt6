@@ -17,6 +17,12 @@ Ext.define('SpendingPortal.view.earmarks.Earmark', {
 	scrollable: true,
 	tpl: [
 		'<div class="earmarkfield">',
+			'<label>Rep:</label>',
+			'{HONORIFIC} ',
+			'{FIRSTNAME}',
+			'{LASTNAME}',
+		'</div>',
+		'<div class="earmarkfield">',
 			'<label>Agency:</label>',
 			'{AGENCY_TITLE}<br />',
 			'{BUREAU_TITLE}',
