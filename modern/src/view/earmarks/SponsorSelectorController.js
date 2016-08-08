@@ -27,11 +27,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 	},
 
 	onSponsorDisclosure: function(list,record,target,index,e) {
-		this.getViewModel().set('selectedSponsorIds',record.get('IDSPONSOR'));
-		this.getView().push({
-			xtype: 'earmarks',
-			title: record.get('FIRSTNAME') + ' ' + record.get('LASTNAME')
-		});
+		this.redirectTo('sponsor/' + record.get('IDSPONSOR') + '/' + encodeURI(record.get('FIRSTNAME') + ' ' + record.get('LASTNAME')));
 	}, 
 
 	onSelectionChange: function(list,models) {
@@ -41,7 +37,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelectorController', {
 	},
 
 	onBack: function(nav,eOpts) {
-		this.redirectTo('');
+		Ext.util.History.back();
 	},
 
 	onClear: function(b,e) {

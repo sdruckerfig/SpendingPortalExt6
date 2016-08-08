@@ -42,7 +42,7 @@ Ext.define('SpendingPortal.view.earmarks.SponsorSelector', {
                 valueField: 'abbr',
                 flex: 1,
                 bind: {
-                    store: 'States',
+                    store: 'States'
                 },
                 listeners: {
                    change: 'onStateSelect'

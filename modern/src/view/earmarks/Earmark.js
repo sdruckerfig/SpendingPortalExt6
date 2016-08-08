@@ -19,7 +19,7 @@ Ext.define('SpendingPortal.view.earmarks.Earmark', {
 		'<div class="earmarkfield">',
 			'<label>Rep:</label>',
 			'{HONORIFIC} ',
-			'{FIRSTNAME}',
+			'{FIRSTNAME} ',
 			'{LASTNAME}',
 		'</div>',
 		'<div class="earmarkfield">',

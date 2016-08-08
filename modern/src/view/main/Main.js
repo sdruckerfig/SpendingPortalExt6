@@ -21,7 +21,7 @@ Ext.define('SpendingPortal.view.main.Main', {
             iconAlign: 'top'
         }
     },
-
+  
     tabBarPosition: 'bottom',
 
     items: [
@@ -32,6 +32,7 @@ Ext.define('SpendingPortal.view.main.Main', {
             iconCls: 'x-fa fa-home'
         },{
             title: 'Compare',
+            route: 'compare',
             layout: 'fit',
             items: [
                 {
@@ -43,15 +44,15 @@ Ext.define('SpendingPortal.view.main.Main', {
                   docked: 'top'
                 }
             ],
-            iconCls: 'x-fa fa-user',
-           
+            iconCls: 'x-fa fa-user' 
         },
         {
             title: 'Feedback',
             xtype: 'feedback',
             iconCls: 'x-fa fa-file-o'
-        }
-        
-        
-    ]
+        }  
+    ],
+    listeners: {
+        initialize: 'onTabPanelInitialize'
+    }
 });

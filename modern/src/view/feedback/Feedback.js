@@ -15,12 +15,12 @@ Ext.define('SpendingPortal.view.feedback.Feedback', {
     items: [{
             xtype: 'textfield',
             label: 'First Name',
-            name: 'firstname',
+            name: 'firstname'
 
         }, {
             xtype: 'textfield',
             label: 'Last Name',
-            name: 'lastname',
+            name: 'lastname'
         }, {
             xtype: 'datepickerfield',
             anchor: '100%',
